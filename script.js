@@ -9,10 +9,10 @@ taskForm.addEventListener("submit", function (e) {
   taskItem.classList.add("task-item");
   taskItem.innerHTML = `
     <div>
-    <input type="checkbox">
+    <input class="checkbox" type="checkbox">
     <span>${task}</span>
     </div>
-    <button class="delete-btn">X</button>
+    <button class="delete-btn">Delete</button>
   `;
   taskList.appendChild(taskItem);
   taskInput.value = "";
@@ -21,6 +21,10 @@ taskForm.addEventListener("submit", function (e) {
 taskList.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete-btn")) {
     e.target.parentElement.remove();
+    let confirmDelete = confirm("Are you sure you want to delete this task?");
+    if (confirmDelete) {
+      e.target.parentElement.remove();
+    }
   }
 });
 
@@ -33,4 +37,12 @@ taskmList.addEventListener("click", function (e) {
       e.target.nextElementSibling.style.textDecoration = "none";
     }
   }
+});
+
+//lets create a clear all button that will clear all the tasks
+let clearAll = document.getElementById("clear-all");
+clearAll.addEventListener("click", function (e) {
+  let confirmDelete = confirm("Are you sure you want to delete all tasks?");
+  if (confirmDelete)
+  taskList.innerHTML = "";
 });
