@@ -3,7 +3,7 @@ This is a simple web-based Todo List application that allows users to create, ma
 
 ## Link
 
-https://64d140074bea7d18a1c3c498--singular-rabanadas-ba9b8e.netlify.app
+https://alschool-todo-application.netlify.app
 
 ## Features
 
